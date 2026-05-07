@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The Morris Group at Lang Realty — luxury Intracoastal, waterfront, and country-club residential expertise in Boca Raton. Boca-native, mother-son team. 15+ years selling South Florida's finest." />
+<title>The Morris Group · Boca Raton Luxury Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  /* Option C — Navy & Seaglass */
+  --cream:#F2EFE8;
+  --warm-white:#F8F5EE;
+  --dark:#1B2F3F;
+  --dark-soft:#38556B;
+  --accent:#7AB5AA;
+  --accent-dark:#4A8479;
+  --accent-light:#C9DDD7;
+  --sand:#DBD5C9;
+  --text-muted:#5C504A;
+
+  /* RGB triplets */
+  --accent-rgb:122,181,170;
+  --dark-rgb:27,47,63;
+  --warm-white-rgb:248,245,238;
+  --hero-overlay-tint:5,12,22;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.85;
+  color:var(--dark-soft);
+  background:var(--cream);
+  overflow-x:hidden;
+  padding-bottom:64px; /* sticky bar */
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ===== Reusable ===== */
+.eyebrow{
+  font-size:11px;letter-spacing:0.32em;
+  color:var(--accent-dark);text-transform:uppercase;
+  font-weight:500;margin-bottom:24px;display:inline-block;
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(38px,5vw,62px);line-height:1.05;
+  color:var(--dark);margin-bottom:24px;letter-spacing:-0.01em;
+}
+.section-title em{font-style:italic;color:var(--accent-dark)}
+.section-intro{max-width:640px;font-size:17px;line-height:1.8;color:var(--text-muted)}
+
+section{padding:96px 40px}
+.container{max-width:1080px;margin:0 auto}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ===== Nav ===== */
+.nav{
+  position:absolute;top:0;left:0;right:0;z-index:50;
+  padding:28px 40px;display:flex;align-items:center;justify-content:space-between;
+}
+.wordmark{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:22px;color:#fff;letter-spacing:0.18em;
+  text-transform:uppercase;white-space:nowrap;
+}
+.wordmark em{font-style:italic;font-weight:300;letter-spacing:0.04em;text-transform:none;font-size:18px;display:block;color:rgba(255,255,255,0.75);margin-top:2px;letter-spacing:0.06em}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.92);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:400;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  background:var(--accent);color:var(--dark);
+  padding:11px 22px;font-size:12px;letter-spacing:0.18em;
+  text-transform:uppercase;font-weight:500;border-radius:2px;
+  transition:background .3s,transform .3s;
+}
+.nav-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+.nav-mobile-cta{display:none}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  overflow:hidden;color:#fff;
+}
+.hero-video{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero-video video{
+  position:absolute;top:50%;left:50%;
+  min-width:100%;min-height:100%;width:auto;height:auto;
+  transform:translate(-50%,-50%);object-fit:cover;
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,
+    rgba(var(--hero-overlay-tint),0.55) 0%,
+    rgba(var(--hero-overlay-tint),0.68) 50%,
+    rgba(var(--hero-overlay-tint),0.93) 100%);
+}
+.hero-content{
+  position:relative;z-index:3;
+  max-width:1080px;margin:0 auto;padding:0 40px;
+  width:100%;
+}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:0.32em;
+  color:var(--accent);text-transform:uppercase;
+  font-weight:500;margin-bottom:32px;display:inline-block;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(52px,7.5vw,90px);line-height:1.02;
+  color:#fff;letter-spacing:-0.015em;margin-bottom:32px;
+  max-width:780px;
+}
+.hero-title em{font-style:italic;color:var(--accent-light);font-weight:300}
+.hero-sub{
+  font-size:18px;line-height:1.7;font-weight:300;
+  color:rgba(255,255,255,0.92);max-width:560px;margin-bottom:48px;
+}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--accent);color:var(--dark);
+  padding:18px 36px;font-size:13px;letter-spacing:0.18em;
+  text-transform:uppercase;font-weight:500;border-radius:2px;
+  transition:background .3s,transform .3s;display:inline-block;
+}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
+.btn-ghost{
+  background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);
+  padding:18px 36px;font-size:13px;letter-spacing:0.18em;
+  text-transform:uppercase;font-weight:500;border-radius:2px;
+  transition:border-color .3s,background .3s;display:inline-block;
+}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+.scroll-indicator{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  z-index:3;color:rgba(255,255,255,0.7);font-size:10px;letter-spacing:0.32em;
+  text-transform:uppercase;font-weight:500;text-align:center;
+}
+.scroll-indicator::after{
+  content:"";display:block;width:1px;height:36px;background:rgba(255,255,255,0.5);
+  margin:14px auto 0;animation:scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse{
+  0%,100%{transform:scaleY(1);opacity:0.5}
+  50%{transform:scaleY(1.4);opacity:1}
+}
+
+/* ===== Stats Bar ===== */
+.stats{
+  background:var(--dark);color:#fff;padding:56px 40px;
+}
+.stats-inner{
+  max-width:1080px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:center;
+  position:relative;
+}
+.stat{text-align:center;position:relative}
+.stat:not(:last-child)::after{
+  content:"";position:absolute;right:-20px;top:10%;height:80%;width:1px;
+  background:rgba(var(--accent-rgb),0.25);
+}
+.stat-number{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(44px,5vw,64px);color:var(--accent);line-height:1;letter-spacing:-0.02em;
+}
+.stat-label{
+  font-size:11px;letter-spacing:0.28em;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;font-weight:400;margin-top:14px;
+}
+
+/* ===== About ===== */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:72px;align-items:start}
+.headshot-col{position:relative}
+.headshot-wrap{
+  position:relative;aspect-ratio:3/4;overflow:hidden;
+  max-width:420px;background:var(--sand);
+}
+.headshot-wrap img{width:100%;height:100%;object-fit:cover}
+.headshot-badge{
+  position:absolute;bottom:-18px;left:-18px;
+  background:var(--dark);color:#fff;
+  padding:18px 24px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:18px;letter-spacing:0.04em;
+  max-width:240px;line-height:1.3;
+}
+.headshot-badge::before{
+  content:"★";color:var(--accent);font-style:normal;
+  font-size:14px;display:block;letter-spacing:4px;margin-bottom:8px;
+}
+.about-content p{margin-bottom:20px;font-size:16px;line-height:1.85;color:var(--text-muted)}
+.about-content p:first-of-type{font-size:18px;color:var(--dark-soft)}
+.certs{
+  margin-top:32px;display:flex;flex-wrap:wrap;gap:10px;
+}
+.cert-pill{
+  background:var(--accent-light);
+  color:var(--dark);
+  padding:8px 16px;font-size:11px;letter-spacing:0.14em;
+  text-transform:uppercase;font-weight:500;border-radius:2px;
+  border:1px solid rgba(var(--accent-rgb),0.4);
+}
+
+/* ===== Listings ===== */
+.listings{background:var(--warm-white)}
+.listings-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px}
+
+.listing-feature{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:0;
+  background:#fff;margin-bottom:96px;
+  box-shadow:0 24px 64px rgba(var(--dark-rgb),0.08);
+  overflow:hidden;
+}
+.listing-feature-img{aspect-ratio:auto;position:relative;overflow:hidden;min-height:480px}
+.listing-feature-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.listing-feature:hover .listing-feature-img img{transform:scale(1.03)}
+.listing-feature-info{padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.listing-feature-info .specialty-eyebrow{margin-bottom:12px}
+.listing-feature-addr{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:38px;color:var(--dark);line-height:1.1;letter-spacing:-0.01em;
+  margin-bottom:6px;
+}
+.listing-feature-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;font-weight:400}
+.listing-feature-price{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:42px;color:var(--accent-dark);line-height:1;margin-bottom:32px;letter-spacing:-0.02em;
+}
+.listing-feature-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  padding:24px 0;margin-bottom:24px;
+  border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);
+}
+.listing-feature-stats div{display:flex;flex-direction:column;gap:4px}
+.listing-feature-stats strong{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:28px;color:var(--dark);line-height:1;
+}
+.listing-feature-stats span{
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--text-muted);font-weight:500;
+}
+.listing-feature-desc{font-size:15px;line-height:1.75;color:var(--text-muted);margin-bottom:20px}
+.listing-feature-meta{font-size:12px;color:var(--accent-dark);letter-spacing:0.04em}
+.listing-feature-meta strong{color:var(--dark);font-weight:500}
+
+.track-record-header{margin-bottom:48px;max-width:680px}
+.track-record-header .section-intro{margin-top:0}
+
+.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.listing-card{
+  background:#fff;overflow:hidden;
+  transition:transform .5s ease,box-shadow .5s ease;
+  cursor:pointer;
+}
+.listing-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 48px rgba(var(--dark-rgb),0.12);
+}
+.listing-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.listing-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.listing-card:hover .listing-img img{transform:scale(1.06)}
+.listing-tag{
+  position:absolute;top:16px;left:16px;
+  background:var(--dark);color:#fff;
+  padding:6px 12px;font-size:10px;letter-spacing:0.18em;
+  text-transform:uppercase;font-weight:500;
+}
+.listing-info{padding:28px 24px}
+.listing-price{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:28px;color:var(--dark);margin-bottom:8px;
+}
+.listing-addr{font-size:14px;color:var(--text-muted);margin-bottom:14px;font-weight:400}
+.listing-meta{
+  display:flex;gap:18px;font-size:12px;letter-spacing:0.06em;
+  color:var(--accent-dark);font-weight:500;text-transform:uppercase;
+  padding-top:14px;border-top:1px solid var(--sand);
+}
+
+/* ===== Specialties ===== */
+.specialties{background:var(--cream)}
+.specialties-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:56px}
+.specialty-card{
+  background:#fff;overflow:hidden;
+  transition:transform .5s ease,box-shadow .5s ease;
+}
+.specialty-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(var(--dark-rgb),0.1);
+}
+.specialty-img{aspect-ratio:16/9;overflow:hidden}
+.specialty-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.specialty-card:hover .specialty-img img{transform:scale(1.04)}
+.specialty-body{padding:32px 32px 36px}
+.specialty-eyebrow{
+  font-size:10px;letter-spacing:0.28em;color:var(--accent-dark);
+  text-transform:uppercase;font-weight:500;margin-bottom:14px;display:block;
+}
+.specialty-title{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:28px;color:var(--dark);margin-bottom:14px;line-height:1.2;
+}
+.specialty-text{font-size:15px;line-height:1.75;color:var(--text-muted)}
+
+/* ===== Testimonials ===== */
+.testimonials{background:var(--dark);color:#fff;overflow:hidden}
+.testimonials .section-title{color:#fff}
+.testimonials .eyebrow{color:var(--accent)}
+.testimonials .section-intro{color:rgba(255,255,255,0.7)}
+.slider-wrap{margin-top:56px;position:relative}
+.slider{
+  display:flex;gap:24px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding-bottom:8px;
+  scrollbar-width:none;
+}
+.slider::-webkit-scrollbar{display:none}
+.testimonial-card{
+  flex:0 0 calc(85% - 20px);max-width:560px;
+  background:#fff;color:var(--dark-soft);
+  padding:48px 44px;scroll-snap-align:start;
+  border-radius:2px;
+}
+.testimonial-stars{color:var(--accent);font-size:14px;letter-spacing:6px;margin-bottom:24px}
+.testimonial-quote{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:22px;line-height:1.55;color:var(--dark);margin-bottom:32px;letter-spacing:-0.005em;
+}
+.testimonial-author{font-size:13px;letter-spacing:0.12em;color:var(--accent-dark);font-weight:500;text-transform:uppercase}
+.testimonial-meta{font-size:12px;color:var(--text-muted);margin-top:6px;font-weight:400}
+.slider-controls{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:40px;flex-wrap:wrap;gap:20px;
+}
+.slider-dots{display:flex;gap:10px}
+.slider-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:rgba(255,255,255,0.25);transition:background .3s,transform .3s;cursor:pointer;
+}
+.slider-dot.active{background:var(--accent);transform:scale(1.2)}
+.slider-arrows{display:flex;gap:12px}
+.slider-arrow{
+  width:48px;height:48px;border:1px solid rgba(255,255,255,0.3);
+  border-radius:50%;color:#fff;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .3s,border-color .3s;
+}
+.slider-arrow:hover{background:var(--accent);border-color:var(--accent);color:var(--dark)}
+.slider-counter{font-size:12px;letter-spacing:0.18em;color:rgba(255,255,255,0.6);font-weight:400}
+
+/* ===== Contact ===== */
+.contact{background:var(--warm-white)}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;margin-top:56px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-item{display:flex;gap:20px;align-items:flex-start}
+.contact-icon{
+  flex:0 0 48px;width:48px;height:48px;
+  background:var(--accent-light);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-icon svg{width:20px;height:20px;stroke:var(--dark-soft);stroke-width:1.75;fill:none}
+.contact-item > div:last-child{min-width:0;flex:1}
+.contact-label{font-size:11px;letter-spacing:0.24em;color:var(--accent-dark);text-transform:uppercase;font-weight:500;margin-bottom:4px}
+.contact-item .val{
+  font-size:17px;color:var(--dark);font-weight:400;
+  overflow-wrap:break-word;word-break:break-word;
+}
+.contact-form{background:var(--cream);padding:40px 36px;border-radius:2px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-group label,.form-row label{
+  display:block;font-size:11px;letter-spacing:0.18em;
+  color:var(--accent-dark);text-transform:uppercase;font-weight:500;margin-bottom:6px;
+}
+.form-group input,.form-row input,.form-group textarea,.form-row select{
+  width:100%;padding:14px 16px;background:#fff;
+  border:1px solid var(--sand);border-radius:2px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  color:var(--dark);transition:border-color .3s;
+}
+.form-group input:focus,.form-row input:focus,.form-group textarea:focus,.form-row select:focus{
+  outline:none;border-color:var(--accent-dark);
+}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{
+  width:100%;padding:18px;background:var(--dark);color:#fff;
+  font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;
+  border-radius:2px;transition:background .3s;margin-top:6px;
+}
+.form-submit:hover{background:var(--dark-soft)}
+
+/* ===== Footer ===== */
+.footer{
+  background:var(--dark);color:#fff;padding:64px 40px 80px;
+}
+.footer-inner{max-width:1080px;margin:0 auto;text-align:center}
+.footer-wordmark{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:32px;color:#fff;letter-spacing:0.18em;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.footer-tagline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:16px;color:rgba(255,255,255,0.75);margin-bottom:36px;letter-spacing:0.06em;
+}
+.footer-certs{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-bottom:36px;padding:24px 0;
+  border-top:1px solid rgba(var(--accent-rgb),0.2);
+  border-bottom:1px solid rgba(var(--accent-rgb),0.2);
+}
+.footer-cert{
+  font-size:11px;letter-spacing:0.18em;color:var(--accent);
+  text-transform:uppercase;font-weight:400;
+}
+.footer-disclaimer{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:680px;margin:0 auto}
+
+/* ===== Sticky Bottom Bar ===== */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:var(--dark);color:#fff;
+  padding:12px 40px;
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  white-space:nowrap;
+  border-top:1px solid rgba(var(--accent-rgb),0.3);
+}
+.sticky-text{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:18px;letter-spacing:0.02em;color:#fff;
+}
+.sticky-text strong{font-weight:500;color:var(--accent-light)}
+.sticky-cta{
+  background:var(--accent);color:var(--dark);
+  padding:10px 22px;font-size:12px;letter-spacing:0.16em;
+  text-transform:uppercase;font-weight:500;border-radius:2px;
+  transition:background .3s,transform .3s;
+}
+.sticky-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+
+/* ===== Popup ===== */
+.popup-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(var(--dark-rgb),0.7);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;animation:fadeIn .3s ease;
+}
+.popup-overlay.active{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.popup{
+  background:var(--warm-white);max-width:880px;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;border-radius:2px;overflow:hidden;
+  animation:popIn .4s ease;
+}
+@keyframes popIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
+.popup-img{aspect-ratio:auto;height:100%;min-height:380px;overflow:hidden}
+.popup-img img{width:100%;height:100%;object-fit:cover}
+.popup-content{padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+.popup-eyebrow{font-size:10px;letter-spacing:0.28em;color:var(--accent-dark);text-transform:uppercase;font-weight:500;margin-bottom:14px}
+.popup-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:34px;line-height:1.15;color:var(--dark);margin-bottom:14px;letter-spacing:-0.01em;
+}
+.popup-title em{font-style:italic;color:var(--accent-dark)}
+.popup-text{font-size:14px;line-height:1.7;color:var(--text-muted);margin-bottom:24px}
+.popup-form{display:flex;flex-direction:column;gap:12px}
+.popup-form input{
+  padding:14px 16px;border:1px solid var(--sand);background:#fff;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--dark);border-radius:2px;
+}
+.popup-form input:focus{outline:none;border-color:var(--accent-dark)}
+.popup-form button{
+  padding:16px;background:var(--dark);color:#fff;
+  font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;border-radius:2px;
+  transition:background .3s;
+}
+.popup-form button:hover{background:var(--dark-soft)}
+.popup-close{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(var(--warm-white-rgb),0.95);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--dark);transition:background .3s;
+}
+.popup-close:hover{background:#fff}
+.popup-success{display:none;text-align:center;padding:60px 40px}
+.popup-success.show{display:block}
+
+/* ===== Responsive: Tablet ≤960px ===== */
+@media (max-width:960px){
+  section{padding:80px 28px}
+  .nav{padding:24px 28px}
+  .nav-links{display:none}
+  .stats-inner{gap:24px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .headshot-col{display:flex;flex-direction:column;align-items:center}
+  .headshot-wrap{max-width:420px;width:100%}
+  .listing-feature{grid-template-columns:1fr;margin-bottom:64px}
+  .listing-feature-img{min-height:340px;aspect-ratio:16/9}
+  .listing-feature-info{padding:40px 32px}
+  .listing-feature-addr{font-size:32px}
+  .listing-feature-price{font-size:36px}
+  .listings-grid{grid-template-columns:repeat(2,1fr)}
+  .specialties-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .testimonial-card{flex:0 0 calc(80% - 20px);padding:40px 32px}
+  .popup{grid-template-columns:1fr}
+  .popup-img{min-height:240px;aspect-ratio:16/9}
+  .popup-content{padding:36px 28px}
+}
+
+/* ===== Responsive: Mobile ≤640px ===== */
+@media (max-width:640px){
+  section{padding:64px 20px}
+  body{padding-bottom:60px}
+  .nav{padding:20px 20px}
+  .wordmark{font-size:18px;letter-spacing:0.04em}
+  .wordmark em{font-size:11px;margin-top:1px;letter-spacing:0.04em}
+  .nav-cta{display:none}
+  .nav-mobile-cta{
+    display:inline-block;background:var(--accent);color:var(--dark);
+    padding:10px 14px;font-size:11px;letter-spacing:0.12em;
+    text-transform:uppercase;font-weight:500;border-radius:2px;
+    white-space:nowrap;
+  }
+  .hero-content{padding:0 20px}
+  .hero-eyebrow{margin-bottom:24px}
+  .hero-title{margin-bottom:24px}
+  .hero-sub{margin-bottom:32px;font-size:16px}
+  .hero-ctas{flex-direction:column;gap:12px}
+  .hero-ctas a{width:100%;text-align:center}
+  .hero{padding-bottom:0}
+  .hero-content{padding-bottom:80px}
+  .scroll-indicator{bottom:20px}
+  .stats{padding:48px 20px}
+  .stats-inner{grid-template-columns:1fr;gap:36px}
+  .stat:not(:last-child)::after{display:none}
+  .stat:not(:last-child){padding-bottom:32px;border-bottom:1px solid rgba(var(--accent-rgb),0.2)}
+  .headshot-badge{
+    position:static;margin-top:16px;width:100%;max-width:420px;
+    text-align:center;padding:20px;
+  }
+  .listings-grid{grid-template-columns:1fr}
+  .listings-header{flex-direction:column;align-items:flex-start}
+  .listing-feature-img{min-height:240px;aspect-ratio:4/3}
+  .listing-feature-info{padding:32px 24px}
+  .listing-feature-addr{font-size:26px}
+  .listing-feature-price{font-size:30px}
+  .listing-feature-stats{gap:12px;padding:18px 0;margin-bottom:20px}
+  .listing-feature-stats strong{font-size:22px}
+  .testimonial-card{flex:0 0 calc(100% - 20px);padding:36px 28px}
+  .testimonial-quote{font-size:19px}
+  .form-row{grid-template-columns:1fr}
+  .contact-item .val{font-family:'DM Sans',sans-serif;font-size:14px}
+  .footer{padding:48px 20px 64px}
+  .sticky-bar{padding:10px 16px;gap:12px}
+  .sticky-text{font-size:14px;letter-spacing:0.01em}
+  .sticky-cta{padding:9px 16px;font-size:11px;letter-spacing:0.12em}
+}
+
+/* Even tighter at 375px */
+@media (max-width:380px){
+  .sticky-text{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<nav class="nav" aria-label="Main navigation">
+  <a href="#top" class="wordmark">
+    THE MORRIS GROUP
+    <em>at Lang Realty</em>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#listings">Listings</a>
+    <a href="#specialties">Communities</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Schedule a Call</a>
+  </div>
+  <a href="tel:5619016960" class="nav-mobile-cta" aria-label="Call Blake Morris">561.901.6960</a>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="auto"
+      poster="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=80&fit=crop">
+      <source src="https://videos.pexels.com/video-files/33840060/14361021_2560_1440_30fps.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Boca Raton · Intracoastal · Country Club</span>
+    <h1 class="hero-title">South Florida<br/>luxury, <em>quietly mastered.</em></h1>
+    <p class="hero-sub">Three decades of Boca-native insight. Fifteen years selling its finest waterfront and country-club estates. A mother-and-son team that takes a few listings at a time, and gives every client the kind of attention that produces results.</p>
+    <div class="hero-ctas">
+      <a href="#listings" class="btn-primary">View Featured Properties</a>
+      <a href="#contact" class="btn-ghost">Schedule a Consultation</a>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">Discover</div>
+</header>
+
+<!-- ===== Stats Bar ===== -->
+<section class="stats" aria-label="Key statistics">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-number">110+</div>
+      <div class="stat-label">Closed Transactions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">★ Diamond</div>
+      <div class="stat-label">Star Award Recipient</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Years Selling Boca</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="headshot-col reveal">
+      <div class="headshot-wrap">
+        <img
+          src="https://bocaratonobserver.com/downloads/6687/download/BlakeMorris_web.jpg?cb=4b30404c9e66562f99ab2c80abe3c0fe&w=1200"
+          alt="Blake Morris, Principal of The Morris Group at Lang Realty"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=800&q=80&fit=crop';"
+        />
+      </div>
+      <div class="headshot-badge">
+        Diamond Star Award<br/>at Lang Realty
+      </div>
+    </div>
+    <div class="about-content reveal d1">
+      <span class="eyebrow">About The Morris Group</span>
+      <h2 class="section-title">A Boca name. <em>A family practice.</em></h2>
+      <p>Blake Morris is Boca-born and Boca-raised — Saint Andrew's School, then a real estate degree from the University of Miami, and 15 years selling the city's finest homes. His mother, Jeannine, brings decades of Wall Street finance and sales experience. Together, they are The Morris Group at Lang Realty.</p>
+      <p>The Morris approach is intentionally selective. Rather than carrying twenty or thirty listings at a time, the team takes on a small, curated portfolio — so each client gets full focus, not divided attention. That discipline has produced record-breaking sales, the firm's highest sales recognition, and a long roster of repeat clients.</p>
+      <p>Born and raised here means knowing more than the market — it means knowing the country clubs, the school districts, the streets, the neighbors. For Boca's most discerning buyers and sellers, that local fluency is the difference.</p>
+      <div class="certs">
+        <span class="cert-pill">Broker Associate</span>
+        <span class="cert-pill">Diamond Star Award</span>
+        <span class="cert-pill">U. of Miami · Real Estate</span>
+        <span class="cert-pill">15+ Years Experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Listings ===== -->
+<section class="listings" id="listings">
+  <div class="container">
+    <div class="listings-header reveal">
+      <div>
+        <span class="eyebrow">Currently Representing</span>
+        <h2 class="section-title">A featured <em>residence.</em></h2>
+      </div>
+      <p class="section-intro" style="max-width:380px">A small, curated portfolio at any given time — so each home gets the attention it deserves.</p>
+    </div>
+
+    <article class="listing-feature reveal d1">
+      <div class="listing-feature-img">
+        <span class="listing-tag">For Sale</span>
+        <img src="https://photos.zillowstatic.com/fp/7f6ca54117707052d5dcac16fc4b228c-cc_ft_1536.jpg" alt="17099 Watersprite Lakes Road, Boca Raton — five-bedroom new-construction estate" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&fit=crop';" />
+      </div>
+      <div class="listing-feature-info">
+        <span class="specialty-eyebrow">Watersprite Lakes · Boca Raton</span>
+        <h3 class="listing-feature-addr">17099 Watersprite Lakes Road</h3>
+        <p class="listing-feature-sub">Boca Raton, FL 33496 · Built 2022</p>
+        <div class="listing-feature-price">$3,299,000</div>
+        <div class="listing-feature-stats">
+          <div><strong>5</strong><span>Bedrooms</span></div>
+          <div><strong>8</strong><span>Bathrooms</span></div>
+          <div><strong>5,393</strong><span>Square Feet</span></div>
+        </div>
+        <p class="listing-feature-desc">A five-bedroom new-construction estate in one of Boca's most discreet enclaves. Designed for entertaining, sized for a primary residence, and priced for a serious buyer.</p>
+        <p class="listing-feature-meta"><strong>Listed by Blake Morris</strong> · MLS #B26019268</p>
+      </div>
+    </article>
+
+    <div class="track-record-header reveal">
+      <span class="eyebrow">Recent Track Record</span>
+      <h2 class="section-title">A long roster of <em>closings.</em></h2>
+      <p class="section-intro">Over 110 transactions across Boca Raton, Delray Beach, Highland Beach, and the surrounding waterfront. A small selection from the most recent year.</p>
+    </div>
+
+    <div class="listings-grid">
+      <article class="listing-card reveal d1">
+        <div class="listing-img">
+          <span class="listing-tag">Sold · March 2026</span>
+          <img src="https://photos.zillowstatic.com/fp/9257932b8d687074a6dd2210145da913-cc_ft_1536.jpg" alt="17698 Middlebrook Way, Boca Raton — sold March 2026" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&fit=crop';" />
+        </div>
+        <div class="listing-info">
+          <div class="listing-price">$2,725,000</div>
+          <div class="listing-addr">17698 Middlebrook Way · Boca Raton</div>
+          <div class="listing-meta">
+            <span>6 BD</span><span>6 BA</span><span>5,783 SF</span>
+          </div>
+        </div>
+      </article>
+      <article class="listing-card reveal d2">
+        <div class="listing-img">
+          <span class="listing-tag">Sold · March 2026</span>
+          <img src="https://photos.zillowstatic.com/fp/de7693cee3842693f1530238ec5c361a-cc_ft_1536.jpg" alt="10431 Stonebridge Boulevard, Boca Raton — sold March 2026" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&fit=crop';" />
+        </div>
+        <div class="listing-info">
+          <div class="listing-price">$1,000,000</div>
+          <div class="listing-addr">10431 Stonebridge Boulevard · Boca Raton</div>
+          <div class="listing-meta">
+            <span>5 BD</span><span>3 BA</span><span>2,855 SF</span>
+          </div>
+        </div>
+      </article>
+      <article class="listing-card reveal d3">
+        <div class="listing-img">
+          <span class="listing-tag">Sold · December 2025</span>
+          <img src="https://photos.zillowstatic.com/fp/0d844496b2c3ed38ccde848622db6848-cc_ft_1536.jpg" alt="1624 W Classical Boulevard, Delray Beach — sold December 2025" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&q=80&fit=crop';" />
+        </div>
+        <div class="listing-info">
+          <div class="listing-price">$749,000</div>
+          <div class="listing-addr">1624 W Classical Boulevard · Delray Beach</div>
+          <div class="listing-meta">
+            <span>4 BD</span><span>3 BA</span><span>2,888 SF</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Specialties ===== -->
+<section class="specialties" id="specialties">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
+      <span class="eyebrow">Communities & Specialties</span>
+      <h2 class="section-title">Where <em>The Morris Group</em> works.</h2>
+      <p class="section-intro" style="margin:0 auto">Blake's expertise centers on the Boca markets that reward deep local knowledge — Intracoastal estates, country club communities, and the kinds of homes that don't always trade publicly.</p>
+    </div>
+    <div class="specialties-grid">
+      <article class="specialty-card reveal d1">
+        <div class="specialty-img">
+          <img src="https://images.unsplash.com/photo-1609608524302-19292946deb1?w=1200&q=80&fit=crop" alt="Aerial view of luxury homes along the Florida Intracoastal Waterway with palm trees" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&fit=crop';" />
+        </div>
+        <div class="specialty-body">
+          <span class="specialty-eyebrow">Waterfront</span>
+          <h3 class="specialty-title">Intracoastal Estates</h3>
+          <p class="specialty-text">Direct-water and deep-water homes on Boca's most desirable canals and Intracoastal frontage — including Royal Palm Yacht Club, Sanctuary, and Estancia.</p>
+        </div>
+      </article>
+      <article class="specialty-card reveal d2">
+        <div class="specialty-img">
+          <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200&q=80&fit=crop" alt="Country club golf course and clubhouse" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&fit=crop';" />
+        </div>
+        <div class="specialty-body">
+          <span class="specialty-eyebrow">Country Club</span>
+          <h3 class="specialty-title">Boca's Private Clubs</h3>
+          <p class="specialty-text">Three decades of family membership at St. Andrews CC, summer membership at Quail Ridge, and a working knowledge of every Boca club community — Broken Sound, Polo Club, Boca West, and beyond.</p>
+        </div>
+      </article>
+      <article class="specialty-card reveal d1">
+        <div class="specialty-img">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&fit=crop" alt="Luxury Boca Raton single-family residence" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&fit=crop';" />
+        </div>
+        <div class="specialty-body">
+          <span class="specialty-eyebrow">Residential</span>
+          <h3 class="specialty-title">Luxury Single-Family</h3>
+          <p class="specialty-text">From Old Floresta and Boca Bath & Tennis to East Boca's coastal blocks — homes priced from $2M to $20M, sold with a small-team approach and an unhurried pace.</p>
+        </div>
+      </article>
+      <article class="specialty-card reveal d2">
+        <div class="specialty-img">
+          <img src="https://images.unsplash.com/photo-1733244766159-f58f4184fd38?w=1200&q=80&fit=crop" alt="Keys handed to a new homeowner — closing on a private sale" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&fit=crop';" />
+        </div>
+        <div class="specialty-body">
+          <span class="specialty-eyebrow">Off-Market</span>
+          <h3 class="specialty-title">Pocket Listings & Quiet Sales</h3>
+          <p class="specialty-text">A long Boca tenure means a long Boca network. For sellers seeking discretion and buyers seeking access, Blake regularly transacts on properties that never reach the open market.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
+      <span class="eyebrow">In Their Own Words</span>
+      <h2 class="section-title">A few <em>kind words</em>.</h2>
+      <p class="section-intro" style="margin:0 auto;color:rgba(255,255,255,0.7)">From Boca buyers, sellers, and longtime clients of The Morris Group.</p>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider" id="slider" role="list">
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <p class="testimonial-quote">Blake Morris was everything you would want in a Realtor: informed, intelligent, and hard working. With his advice, we sold our house for the price we wanted in record time. I highly recommend him.</p>
+          <div class="testimonial-author">Boca Raton Seller</div>
+          <div class="testimonial-meta">Single-family residence · Sold above ask</div>
+        </article>
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <p class="testimonial-quote">Blake is a professional in every aspect of the real estate business. We interviewed a dozen of profound real estate agents specializing in luxury real estate, and Blake came out on top. He is very experienced in determining the fair value of a house, which is very difficult in today's volatile market.</p>
+          <div class="testimonial-author">Luxury Buyer</div>
+          <div class="testimonial-meta">$5M+ Boca purchase</div>
+        </article>
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <p class="testimonial-quote">Their knowledge of the marketplace was enormously impressive — within just a few days working with them, we felt comfortable enough to begin to hone in on what became the purchase of our new home. We unreservedly recommend anyone looking for a property in the Boca Raton area to make their first call to The Morris Group.</p>
+          <div class="testimonial-author">New Boca Resident</div>
+          <div class="testimonial-meta">Relocation buyer</div>
+        </article>
+        <article class="testimonial-card" role="listitem">
+          <div class="testimonial-stars" aria-label="5 star rating">★★★★★</div>
+          <p class="testimonial-quote">The Morris Group is spot on with market conditions and have worked with us repeatedly to prepare and represent our properties. They are sincere and timely in all matters and execute each detail at closing. Their integrity is paramount in everything they do.</p>
+          <div class="testimonial-author">Repeat Client</div>
+          <div class="testimonial-meta">Multiple transactions, Boca</div>
+        </article>
+      </div>
+      <div class="slider-controls">
+        <div class="slider-dots" id="sliderDots" role="tablist">
+          <button class="slider-dot active" role="tab" aria-label="Go to testimonial 1"></button>
+          <button class="slider-dot" role="tab" aria-label="Go to testimonial 2"></button>
+          <button class="slider-dot" role="tab" aria-label="Go to testimonial 3"></button>
+          <button class="slider-dot" role="tab" aria-label="Go to testimonial 4"></button>
+        </div>
+        <span class="slider-counter" id="sliderCounter">01 / 04</span>
+        <div class="slider-arrows">
+          <button class="slider-arrow" id="prevBtn" aria-label="Previous testimonial">‹</button>
+          <button class="slider-arrow" id="nextBtn" aria-label="Next testimonial">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Schedule a Conversation</span>
+      <h2 class="section-title">Let's <em>talk Boca.</em></h2>
+      <p class="section-intro">Whether you're considering a sale, looking for the right home in the right club, or simply want a candid read on the Boca market — Blake is happy to talk. No pressure, no script, no presentation. Just a conversation.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal d1">
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Direct</div>
+            <div class="val">561.901.6960</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="val">blake@morrisreg.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Office</div>
+            <div class="val">2901 Clint Moore Road, Suite 9<br/>Boca Raton, FL 33496</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Online</div>
+            <div class="val">morrisreg.com</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal d2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you — I\\'ll be in touch';this.querySelector('button').disabled=true;">
+        <div class="form-row">
+          <div>
+            <label for="cf-name">Name</label>
+            <input id="cf-name" type="text" aria-label="Your name" required />
+          </div>
+          <div>
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" type="tel" aria-label="Your phone number" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" type="email" aria-label="Your email address" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-interest">I'm interested in</label>
+          <select id="cf-interest" aria-label="Area of interest">
+            <option>Buying in Boca Raton</option>
+            <option>Selling my home</option>
+            <option>An off-market property</option>
+            <option>A Boca market read</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" aria-label="Your message" placeholder="Tell Blake a little about what you're looking for…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-wordmark">THE MORRIS GROUP</div>
+    <div class="footer-tagline">at Lang Realty · Boca Raton</div>
+    <div class="footer-certs">
+      <span class="footer-cert">Broker Associate</span>
+      <span class="footer-cert">Diamond Star Award</span>
+      <span class="footer-cert">University of Miami</span>
+      <span class="footer-cert">15+ Years</span>
+    </div>
+    <p class="footer-disclaimer">© 2026 The Morris Group at Lang Realty. All rights reserved. Lang Realty is a licensed real estate brokerage in the State of Florida. Information herein is deemed reliable but not guaranteed. Blake Morris, Licensed Real Estate Broker Associate. Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+<!-- ===== Sticky Bottom Bar ===== -->
+<div class="sticky-bar" role="complementary" aria-label="Quick contact">
+  <span class="sticky-text"><strong>Talk Boca</strong> with Blake — </span>
+  <a href="tel:5619016960" class="sticky-cta">Call 561.901.6960</a>
+</div>
+
+<!-- ===== Popup ===== -->
+<div class="popup-overlay" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup">
+    <button class="popup-close" id="popupClose" aria-label="Close popup">✕</button>
+    <div class="popup-img">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80&fit=crop&crop=bottom" alt="Luxury waterfront home" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&fit=crop';" />
+    </div>
+    <div class="popup-content" id="popupBody">
+      <span class="popup-eyebrow">Off-Market in Boca</span>
+      <h3 class="popup-title" id="popupTitle">Quietly <em>for sale</em>.</h3>
+      <p class="popup-text">A few of Boca's most interesting properties never hit the open market. Get The Morris Group's monthly off-market and pocket-listing brief — discreet, short, sent only when there's something worth seeing.</p>
+      <form class="popup-form" id="popupForm" onsubmit="event.preventDefault();showPopupSuccess()">
+        <input type="email" placeholder="Your email" aria-label="Email for off-market list" required />
+        <button type="submit">Add Me to the List</button>
+      </form>
+    </div>
+    <div class="popup-success" id="popupSuccess">
+      <h3 class="popup-title" style="text-align:center">You're on the list.</h3>
+      <p class="popup-text" style="text-align:center">Watch your inbox.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Testimonials slider
+const slider = document.getElementById('slider');
+const dots = document.querySelectorAll('.slider-dot');
+const counter = document.getElementById('sliderCounter');
+const total = dots.length;
+
+function updateActiveDot() {
+  if (!slider) return;
+  const cardWidth = slider.querySelector('.testimonial-card').offsetWidth + 24;
+  const idx = Math.round(slider.scrollLeft / cardWidth);
+  const clamped = Math.min(Math.max(idx, 0), total - 1);
+  dots.forEach((d, i) => d.classList.toggle('active', i === clamped));
+  counter.textContent = String(clamped + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+}
+slider.addEventListener('scroll', updateActiveDot, { passive: true });
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    const cardWidth = slider.querySelector('.testimonial-card').offsetWidth + 24;
+    slider.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+  });
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  const cardWidth = slider.querySelector('.testimonial-card').offsetWidth + 24;
+  slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+  const cardWidth = slider.querySelector('.testimonial-card').offsetWidth + 24;
+  slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+});
+
+// Drag-to-scroll on desktop
+let isDown = false, startX = 0, scrollStart = 0;
+slider.addEventListener('mousedown', e => {
+  isDown = true; slider.style.cursor = 'grabbing';
+  startX = e.pageX - slider.offsetLeft;
+  scrollStart = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => { isDown = false; slider.style.cursor = ''; });
+slider.addEventListener('mouseup', () => { isDown = false; slider.style.cursor = ''; });
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  slider.scrollLeft = scrollStart - (x - startX) * 1.2;
+});
+
+// Popup
+const popup = document.getElementById('popup');
+const popupClose = document.getElementById('popupClose');
+const popupBody = document.getElementById('popupBody');
+const popupSuccess = document.getElementById('popupSuccess');
+const STORAGE_KEY = 'BM_popup_dismissed';
+
+function openPopup() {
+  if (sessionStorage.getItem(STORAGE_KEY)) return;
+  popup.classList.add('active');
+}
+function closePopup() {
+  popup.classList.remove('active');
+  sessionStorage.setItem(STORAGE_KEY, '1');
+}
+function showPopupSuccess() {
+  popupBody.style.display = 'none';
+  popupSuccess.classList.add('show');
+  setTimeout(closePopup, 3000);
+}
+window.showPopupSuccess = showPopupSuccess;
+
+setTimeout(openPopup, 4000);
+popupClose.addEventListener('click', closePopup);
+popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup.classList.contains('active')) closePopup(); });
+</script>
+
+</body>
+</html>
