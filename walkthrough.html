@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A personal walkthrough for Blake Morris — a 60-second video tour of a custom-built demo site." />
+<title>Walkthrough · Blake Morris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  /* Option C — Navy & Seaglass — palette parity with index.html */
+  --cream:#F2EFE8;
+  --warm-white:#F8F5EE;
+  --dark:#1B2F3F;
+  --dark-soft:#38556B;
+  --accent:#7AB5AA;
+  --accent-dark:#4A8479;
+  --accent-light:#C9DDD7;
+  --sand:#DBD5C9;
+  --text-muted:#5C504A;
+
+  --accent-rgb:122,181,170;
+  --dark-rgb:27,47,63;
+  --warm-white-rgb:248,245,238;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.7;
+  color:rgba(255,255,255,0.85);
+  background:var(--dark);
+  min-height:100vh;
+  padding-bottom:64px; /* sticky bar height */
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ===== Layout ===== */
+.page{
+  max-width:520px;
+  margin:0 auto;
+  padding:28px 24px 56px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* ===== Header ===== */
+.wordmark{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  font-size:22px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:20px;
+  white-space:nowrap;
+  transition:color .3s;
+}
+.wordmark:hover{color:var(--accent-light)}
+.wordmark em{
+  font-style:italic;
+  font-weight:300;
+  letter-spacing:0.06em;
+  text-transform:none;
+  font-size:14px;
+  display:block;
+  color:rgba(255,255,255,0.6);
+  margin-top:2px;
+}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:0.32em;
+  color:var(--accent);
+  text-transform:uppercase;
+  font-weight:500;
+  margin-bottom:20px;
+  display:inline-block;
+}
+
+/* ===== Loom Embed ===== */
+.video-wrap{
+  width:100%;
+  max-width:360px;
+  margin:0 auto 40px;
+}
+.video-aspect{
+  position:relative;
+  padding-bottom:217.4129353233831%; /* exact value from Loom embed snippet */
+  height:0;
+  width:100%;
+  background:#000;
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,0.4);
+}
+.video-aspect iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ===== CTAs ===== */
+.cta-block{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  margin-bottom:48px;
+}
+.btn-demo{
+  display:inline-block;
+  background:var(--accent);
+  color:var(--dark);
+  padding:16px 36px;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  border-radius:2px;
+  transition:background .3s,transform .3s;
+}
+.btn-demo:hover{
+  background:var(--accent-light);
+  transform:translateY(-2px);
+}
+.text-link{
+  font-size:13px;
+  letter-spacing:0.04em;
+  color:rgba(255,255,255,0.65);
+  font-weight:400;
+  border-bottom:1px solid rgba(var(--accent-rgb),0.35);
+  padding-bottom:2px;
+  transition:color .3s,border-color .3s;
+}
+.text-link:hover{
+  color:var(--accent-light);
+  border-color:var(--accent-light);
+}
+
+/* ===== Footer ===== */
+.footer{
+  font-size:11px;
+  letter-spacing:0.18em;
+  color:rgba(255,255,255,0.4);
+  text-transform:uppercase;
+  font-weight:400;
+  padding-top:24px;
+  border-top:1px solid rgba(var(--accent-rgb),0.15);
+  width:100%;
+  max-width:360px;
+}
+
+/* ===== Sticky CTA Bar — Namnum brand ===== */
+.sticky-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:200;
+  height:64px;
+  background:#F0EDE8;
+  border-top:1px solid rgba(0,0,0,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
+}
+.sticky-inner{
+  max-width:480px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.sticky-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  font-weight:400;
+  color:#3A3530;
+  white-space:nowrap;
+}
+.sticky-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:#151821;
+  color:#F0EDE8;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  padding:11px 24px;
+  border-radius:2px;
+  transition:background .3s,transform .3s;
+  white-space:nowrap;
+}
+.sticky-cta:hover{
+  background:#2C2A33;
+  transform:translateY(-1px);
+}
+.sticky-cta .arrow{
+  display:inline-block;
+  transition:transform .3s;
+}
+.sticky-cta:hover .arrow{
+  transform:translateX(3px);
+}
+
+/* ===== Mobile ===== */
+@media (max-width:480px){
+  body{padding-bottom:60px}
+  .page{padding:24px 20px 48px}
+  .wordmark{font-size:20px}
+  .video-wrap{max-width:100%}
+  .btn-demo{padding:15px 28px}
+  .sticky-bar{height:60px;padding:0 16px}
+  .sticky-inner{gap:16px}
+  .sticky-label{font-size:12px}
+  .sticky-cta{font-size:12px;padding:10px 20px}
+}
+</style>
+</head>
+<body>
+
+<main class="page">
+  <a href="https://blake-morris-demo.vercel.app/" class="wordmark" aria-label="Visit Blake Morris's demo site">
+    BLAKE MORRIS
+    <em>The Morris Group at Lang Realty</em>
+  </a>
+
+  <span class="eyebrow">A Personal Walkthrough</span>
+
+  <div class="video-wrap">
+    <div class="video-aspect">
+      <iframe
+        src="https://www.loom.com/embed/8c23d3d35dcb47299772294e095feee0?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&hideLogo=true"
+        title="Personal walkthrough video for Blake Morris"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <a href="https://blake-morris-demo.vercel.app/" class="btn-demo">View Your Demo</a>
+    <a href="https://namnumdesign.co" class="text-link" target="_blank" rel="noopener">How this works →</a>
+  </div>
+
+  <div class="footer">A Namnum Design Co · personal walkthrough</div>
+</main>
+
+<aside class="sticky-bar" role="complementary" aria-label="Schedule a call">
+  <div class="sticky-inner">
+    <span class="sticky-label">Like what you see?</span>
+    <a href="https://fantastical.app/Namnum/Intro-conversation" class="sticky-cta" target="_blank" rel="noopener">
+      Let's Talk <span class="arrow">→</span>
+    </a>
+  </div>
+</aside>
+
+</body>
+</html>
